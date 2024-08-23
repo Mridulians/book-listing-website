@@ -17,7 +17,7 @@ const App = () => {
     if (token) {
       // Fetch the user data from the backend using the token
       axios
-        .get("http://localhost:5000/auth/user", {
+        .get("https://book-listing-backend-s0dh.onrender.com/auth/user", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setUser(res.data.user))

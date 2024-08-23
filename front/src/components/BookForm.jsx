@@ -24,7 +24,7 @@ const BookForm = ({ onAddBook }) => {
     e.preventDefault();
     const newBook = { title, author, genre, createdBy };
     try {
-      const res = await axios.post("http://localhost:5000/books", newBook);
+      const res = await axios.post("https://book-listing-backend-s0dh.onrender.com/books", newBook);
       onAddBook(res.data); // Update the state in the parent component
       setTitle("");
       setAuthor("");

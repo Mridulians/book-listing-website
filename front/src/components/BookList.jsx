@@ -10,7 +10,7 @@ const BookList = ({ books, setBooks }) => {
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/books");
+      const res = await axios.get("https://book-listing-backend-s0dh.onrender.com/books");
       setBooks(res.data);
     } catch (err) {
       console.error(err);
@@ -19,7 +19,7 @@ const BookList = ({ books, setBooks }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/books/${id}`);
+      await axios.delete(`https://book-listing-backend-s0dh.onrender.com/books/${id}`);
       setBooks(books.filter((book) => book._id !== id));
     } catch (err) {
       console.error(err);
@@ -34,7 +34,7 @@ const BookList = ({ books, setBooks }) => {
     if (newTitle && newAuthor && newGenre) {
       try {
         const res = await axios.patch(
-          `http://localhost:5000/books/${book._id}`,
+          `https://book-listing-backend-s0dh.onrender.com/books/${book._id}`,
           {
             title: newTitle,
             author: newAuthor,

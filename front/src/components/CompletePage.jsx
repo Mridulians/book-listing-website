@@ -19,7 +19,7 @@ function CompletePage() {
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/books");
+      const res = await axios.get("https://book-listing-backend-s0dh.onrender.com/books");
       setBooks(res.data);
     } catch (err) {
       console.error(err);
